@@ -11,7 +11,7 @@ class UserForm extends Component {
     bio: ""
   };
 
-  stepAction = value => () => {
+  stepAction = value => {
     const { step } = this.state;
     let stepValue = value === "next" ? step + 1 : step - 1;
     this.setState({
@@ -20,7 +20,7 @@ class UserForm extends Component {
   };
 
   render() {
-    return <button onClick={this.stepAction("next")}>Next</button>;
+    return <button onClick={() => this.stepAction("next")}>Next</button>;
   }
 }
 
