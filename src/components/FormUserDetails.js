@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
   container: {
@@ -18,6 +19,9 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit
+  },
+  button: {
+    margin: theme.spacing.unit
   }
 });
 
@@ -40,6 +44,45 @@ export class FormUserDetails extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
+        <form className={classes.container} noValidate autoComplete="off">
+          <TextField
+            className={classes.textField}
+            id="firstName"
+            label="first Name"
+            value={values.firstName}
+            onChange={handleChange("firstName")}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            className={classes.textField}
+            id="lastName"
+            label="Last Name"
+            value={values.lastName}
+            onChange={handleChange("lastName")}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-email-input"
+            label="Email"
+            className={classes.textField}
+            value={values.email}
+            onChange={handleChange("email")}
+            type="email"
+            name="email"
+            autoComplete="email"
+            margin="normal"
+            variant="outlined"
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Continue
+          </Button>
+        </form>
       </Fragment>
     );
   }
