@@ -46,6 +46,7 @@ export class FormUserDetails extends Component {
         </AppBar>
         <form className={classes.container} noValidate autoComplete="off">
           <TextField
+            fullWidth
             className={classes.textField}
             id="firstName"
             label="first Name"
@@ -55,6 +56,7 @@ export class FormUserDetails extends Component {
             variant="outlined"
           />
           <TextField
+            fullWidth
             className={classes.textField}
             id="lastName"
             label="Last Name"
@@ -64,6 +66,7 @@ export class FormUserDetails extends Component {
             variant="outlined"
           />
           <TextField
+            fullWidth
             id="outlined-email-input"
             label="Email"
             className={classes.textField}
