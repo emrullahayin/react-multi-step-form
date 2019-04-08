@@ -49,7 +49,7 @@ export class FormUserDetails extends Component {
             fullWidth
             className={classes.textField}
             id="firstName"
-            label="first Name"
+            label="First Name"
             value={values.firstName}
             onChange={handleChange("firstName")}
             margin="normal"
