@@ -56,7 +56,6 @@ export class FormPersonalDetails extends Component {
         />
         <Button
           variant="contained"
-          color="primary"
           onClick={this.continue("prev")}
           className={classes.button}
         >
