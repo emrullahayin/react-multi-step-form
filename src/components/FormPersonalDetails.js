@@ -17,7 +17,7 @@ const styles = theme => ({
 export class FormPersonalDetails extends Component {
   continue = type => e => {
     e.preventDefault();
-    this.props.nextStep(type)
+    this.props.stepAction(type);
   };
   render() {
     const { classes, values, handleChange } = this.props;
@@ -63,6 +63,14 @@ export class FormPersonalDetails extends Component {
           onClick={this.continue("prev")}
           className={classes.button}
         >
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={this.continue("next")}
+          className={classes.button}
+        >
           Continue
         </Button>
       </Fragment>
@@ -72,7 +80,7 @@ export class FormPersonalDetails extends Component {
 
 FormPersonalDetails.propTypes = {
   classes: PropTypes.object.isRequired,
-  nextStep: PropTypes.func
+  stepAction: PropTypes.func
 };
 
 export default withStyles(styles)(FormPersonalDetails);

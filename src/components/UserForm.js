@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
 
@@ -33,7 +33,7 @@ class UserForm extends Component {
       case 1:
         return (
           <FormUserDetails
-            nextStep={(type) => this.stepAction(type)}
+            stepAction={type => this.stepAction(type)}
             handleChange={this.handleChange}
             values={values}
           />
@@ -41,7 +41,7 @@ class UserForm extends Component {
       case 2:
         return (
           <FormPersonalDetails
-            nextStep={(type) => this.stepAction(type)}
+            stepAction={type => this.stepAction(type)}
             handleChange={this.handleChange}
             values={values}
           />

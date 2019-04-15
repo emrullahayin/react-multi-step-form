@@ -17,8 +17,8 @@ const styles = theme => ({
 export class FormUserDetails extends Component {
   continue = type => e => {
     e.preventDefault();
-    this.props.nextStep(type)
-    console.log("this.props.stepAction()", this.props.nextStep(type));
+    this.props.stepAction(type)
+    console.log("this.props.stepAction()", this.props.stepAction(type));
   };
   render() {
     const { classes, values, handleChange } = this.props;
@@ -73,7 +73,7 @@ export class FormUserDetails extends Component {
 
 FormUserDetails.propTypes = {
   classes: PropTypes.object.isRequired,
-  nextStep: PropTypes.func
+  stepAction: PropTypes.func
 };
 
 export default withStyles(styles)(FormUserDetails);
