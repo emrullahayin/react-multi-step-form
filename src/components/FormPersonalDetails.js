@@ -27,33 +27,30 @@ export class FormPersonalDetails extends Component {
         <TextField
           fullWidth
           className={classes.textField}
-          id="firstName"
-          label="First Name"
-          value={values.firstName}
-          onChange={handleChange("firstName")}
+          id="occupation"
+          label="Occupation Name"
+          value={values.occupation}
+          onChange={handleChange("occupation")}
           margin="normal"
           variant="outlined"
         />
         <TextField
           fullWidth
           className={classes.textField}
-          id="lastName"
-          label="Last Name"
-          value={values.lastName}
-          onChange={handleChange("lastName")}
+          id="city"
+          label="City Name"
+          value={values.city}
+          onChange={handleChange("city")}
           margin="normal"
           variant="outlined"
         />
         <TextField
           fullWidth
-          id="outlined-email-input"
-          label="Email"
           className={classes.textField}
-          value={values.email}
-          onChange={handleChange("email")}
-          type="email"
-          name="email"
-          autoComplete="email"
+          id="bio"
+          label="Bio Name"
+          value={values.bio}
+          onChange={handleChange("bio")}
           margin="normal"
           variant="outlined"
         />
