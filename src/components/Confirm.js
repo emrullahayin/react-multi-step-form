@@ -9,8 +9,10 @@ import Button from "@material-ui/core/Button";
 const styles = theme => ({
   list: {
     width: "100%",
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    flexWrap: "wrap",
+    marginTop: 14
   },
   button: {
     margin: theme.spacing.unit
