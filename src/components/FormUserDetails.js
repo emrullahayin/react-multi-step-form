@@ -15,16 +15,16 @@ const styles = theme => ({
 });
 
 export class FormUserDetails extends Component {
+  
   continue = type => e => {
     e.preventDefault();
     this.props.stepAction(type)
-    console.log("this.props.stepAction()", this.props.stepAction(type));
   };
+
   render() {
     const { classes, values, handleChange } = this.props;
     return (
       <Fragment>
-        <h1>Form User Details</h1>
         <TextField
           fullWidth
           className={classes.textField}

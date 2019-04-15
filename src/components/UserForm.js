@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
+import Confirm from "./Confirm";
+import Success from "./Success";
 
 class UserForm extends Component {
   state = {
@@ -26,17 +29,30 @@ class UserForm extends Component {
   };
 
   render() {
-    const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
+    const {
+      step,
+      firstName,
+      lastName,
+      email,
+      occupation,
+      city,
+      bio
+    } = this.state;
+    const { stepName } = this.props;
+
     const values = { firstName, lastName, email, occupation, city, bio };
     switch (step) {
       case 1:
+      default:
         return (
-          <FormUserDetails
-            stepAction={type => this.stepAction(type)}
-            handleChange={this.handleChange}
-            values={values}
-          />
+          <Fragment>
+            <FormUserDetails
+              stepAction={type => this.stepAction(type)}
+              handleChange={this.handleChange}
+              values={values}
+            />
+            {stepName === "data"}
+          </Fragment>
         );
       case 2:
         return (
@@ -47,13 +63,16 @@ class UserForm extends Component {
           />
         );
       case 3:
-        return <h1>Confirm</h1>;
+        return (
+          <Confirm stepAction={type => this.stepAction(type)} values={values} />
+        );
       case 4:
-        return <h1>Success</h1>;
-      default:
-        return <h1>Default</h1>;
+        return <Success />;
     }
   }
 }
+UserForm.propTypes = {
+  stepName: PropTypes.string
+};
 
 export default UserForm;

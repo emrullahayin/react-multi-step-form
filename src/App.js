@@ -17,7 +17,7 @@ class App extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit">
-              Enter User Details
+              Enter Details
             </Typography>
           </Toolbar>
         </AppBar>

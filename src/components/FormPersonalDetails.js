@@ -23,7 +23,6 @@ export class FormPersonalDetails extends Component {
     const { classes, values, handleChange } = this.props;
     return (
       <Fragment>
-        <h1>Form Personal Details</h1>
         <TextField
           fullWidth
           className={classes.textField}
